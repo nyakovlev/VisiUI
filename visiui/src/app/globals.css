@@ -17,3 +17,40 @@
 .visiui-textfield:focus {
     border-bottom: 1px solid rgb(95, 192, 221);
 }
+
+.visiui-progressbar {
+    position: relative;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(92, 92, 92);
+    width: 120px;
+}
+
+.visiui-progressbar-fill {
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(0, 202, 13);
+    box-shadow: 0px 0px 8px rgb(46, 255, 31);
+    transition: width 0.2s ease;
+    overflow: hidden;
+}
+
+.visiui-progressbar-running {
+    /* background: linear-gradient(90deg, rgb(25, 163, 0) 50%, rgb(0, 202, 13) 50%);
+    background-repeat: repeat-x;
+    background-size: 16px 4px;
+    background-position: 0% 0%;
+    animation: progress 0.5s linear infinite; */
+}
+
+@keyframes progress {
+    to {
+        background-position: 32px 0%;
+    }
+}
+
+.visiui-runbutton {
+    background-color: blue;
+    padding: 5px;
+    border-radius: 10px;
+}

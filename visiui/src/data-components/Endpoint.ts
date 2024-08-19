@@ -24,7 +24,7 @@ class Binding<T> {
     }
 
     onSet(handler: Handler<T>): Destructor {
-        let handle: Handle<T> = { handler };
+        let handle: Handle<T> = { handler, dispose: undefined };
         this.handles.push(handle);
         if (this.endpoint.initialized && this.endpoint.value) handle.dispose = handler(this.endpoint.value);
         return () => {
@@ -70,7 +70,7 @@ export default class Endpoint<T> {
         return binding;
     }
 
-    set(value: T, ignore: Binding<T>) {
+    set(value: T, ignore?: Binding<T>) {
         if (value == this.value) return;
         this.value = value;
         this.initialized = true;
